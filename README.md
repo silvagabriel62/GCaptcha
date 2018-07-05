@@ -29,7 +29,7 @@ There are no mysteries on how our script works. When it's correctly set into a p
 ### How to use it?
 You don't actually need to configure GCaptcha after you download it. The only thing you need is show the image somewhere in your page and validate the code submitted from within your form processor. Here, we'll show you how to quick start using GCaptcha. 
 
-First of all, you need to download the files and upload them to your server. We recommend you to upload these files into a designated folder into the root of your web directory (i.e. _http://www.yoursite.com/gcaptcha/_). All GCaptcha files must be together in the same folder!
+First of all, you need to [download](https://github.com/silvagabriel62/GCaptcha/releases/download/0.1alpha/gcaptcha.0.1alpha.zip) the files and upload them to your server. We recommend you to upload these files into a designated folder into the root of your web directory (i.e. _http://www.yoursite.com/gcaptcha/_). All GCaptcha files must be together in the same folder!
 
 **Reminder:** GCaptcha is a PHP script, what means your forms must be processed using PHP whenever you want to use it.
 
@@ -39,7 +39,7 @@ Next, we'll include a call to our stylesheet into the `<head>` section of the fo
 <link href="GCAPTCHA_PATH/style.css" rel="stylesheet">
 ```
 
-_Be sure to replace each **GCAPTCHA_PATH** with the full address of the folder you've put GCaptcha files in._
+**Be sure to replace each _GCAPTCHA_PATH_ with the full address of the folder you've put GCaptcha files in.**\
 Now, at the point of the `<body>` section which you want to show the image, add the following code:
 
 ```
@@ -55,7 +55,7 @@ Into the `<form>`, add the following code to create a text input box:
 
 **Note:** The second line is optional. It gives the users the ability to refresh the image if they are having troubles reading it.
 
-Now we'll work on the code that validates the CAPTCHA typed.
+Now we'll work on the code that validates the CAPTCHA typed.\
 Open the PHP file that processes the form data after submission. You can find this by looking at the `action` value inside your `<form>` tag.
 
 On the first line of the file, add the following code:
@@ -85,10 +85,10 @@ Next, to check if the CAPTCHA typed by the user is correct, use the following sn
  ?>
 ```
 
-Into the indicated spots, you can use your own code to process post-validation actions or anything else.
+Into the indicated spots, you can use your own code to process post-validation actions or anything else.\
 Be sure to let the user know when something wrong happens, showing an error message when the typed CAPTCHA is incorrect and giving the user the ability to try that again. 
 
-If you had troubles understanding the process above, you can download an explained example file here.
+If you had troubles understanding the process above, you can download an explained example file [here](https://github.com/silvagabriel62/GCaptcha/releases/download/0.1alpha/example.zip).
 
 Please do not forget that this was just a guide for beginners on GCaptcha. If you are an advanced user and understood properly how our script works, you are totally free to explore it, customize it and modify it to match your application style and functionality.
 
@@ -103,11 +103,11 @@ You can grab GCaptcha binaries here:
 
 [gcaptcha.0.1alpha.zip](https://github.com/silvagabriel62/GCaptcha/releases/download/0.1alpha/gcaptcha.0.1alpha.zip) (Last updated on 04/13/2018)
 
-GCaptcha includes 3rd party scripts from Niklas von Hertzen ([html2canvas](https://html2canvas.hertzen.com/)).
+GCaptcha includes 3rd party scripts from Niklas von Hertzen ([html2canvas](https://html2canvas.hertzen.com/)).\
 GCaptcha is licensed as a free open-source software.
 
 ### Beta feature: audible challenges
-If you wish, you can also allow the user to listen to the CAPTCHA challenge!
+If you wish, you can also allow the user to listen to the CAPTCHA challenge!\
 To do that, you will use the same implementation method as shown above, with a few changes:
 
 To load our audio-capable interface, you must change the following line:
@@ -128,23 +128,23 @@ And to create a button which will allow the user to start/stop listening the cha
 <a href="javascript:void(0);" onclick="javascript:document.getElementById('captcha').contentWindow.playCaptcha();">[Listen/Stop code]</a>
 ```
 
-If you had troubles understanding the process above, you can download an explained example file here.
+If you had troubles understanding the process above, you can download an explained example file [here](https://github.com/silvagabriel62/GCaptcha/releases/download/0.1alpha/example.zip).
 
 **Warning:** audible challenges are an experimental feature, what means they may not work properly in all browsers and devices. We are working hard to make this function stable and efficient, please stay tuned in new updates.
 
 ### Tips & Troubleshooting
 
-**Script requirements**
+**Script requirements**\
 This script will only work if the browser has cookies enabled. It cannot run on servers which PHP session feature is not available somehow. Stable PHP 5.5 or newer is highly recommended. To use audio features, the browser must support HTML5 audio tags and Web Speech API interface. 
 
-**Using predefined words from a list**
+**Using predefined words from a list**\
 If you want the user to be prompted with a range of predefined words instead of a random code, you can use our word list functionality. To do this, simply change the code generation method (in the _gcaptcha.php_ file) to option 2. The word list is read from the file _words.txt_, which consists of a simple database with one word per line, without trailing spaces. Modify this file to change the word list. You can also try using phrases or multiple words at once, just by setting each challenge in one line of this file. Just be careful when using very large word lists: they demand memory from your server and may decrease your page's loading performance. 
 
-**Multiple instances**
+**Multiple instances**\
 For now, you cannot use more than one CAPTCHA on the same page. This will lead to a code conflict and make all instances unusable. 
 
-**Call stack error (session_start problem)**
+**Call stack error (session_start problem)**\
 If you are experiencing this issue, be sure to include the GCaptcha loader (_gcaptcha.php_) in the very FIRST line of the form processor file (as explained above). The script itself starts the PHP session, so there can't be no other `session_start()` command in the same file. 
 
-**The code isn't being passed through the form**
+**The code isn't being passed through the form**\
 You have to make sure that you're using the same processing method when submitting the form (`method` value into `<form>` tag) and in the validation code (`$_GET` or `$_POST` according to the method you chose previously). We always recommend you to use the `$_POST` method in order to prevent security breaks.
