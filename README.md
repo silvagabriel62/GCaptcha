@@ -98,6 +98,14 @@ Also, you can customize the image appearance (container/font size, distortion, c
 
 Both files are self-explained, but you need minimum CSS knowledge in order to customize the appearance settings.
 
+### Where can I download it?
+You can grab GCaptcha binaries here:
+
+[gcaptcha.0.1alpha.zip](https://github.com/silvagabriel62/GCaptcha/releases/download/0.1alpha/gcaptcha.0.1alpha.zip) (Last updated on 04/13/2018)
+
+GCaptcha includes 3rd party scripts from Niklas von Hertzen ([html2canvas](https://html2canvas.hertzen.com/)).
+GCaptcha is licensed as a free open-source software.
+
 ### Beta feature: audible challenges
 If you wish, you can also allow the user to listen to the CAPTCHA challenge!
 To do that, you will use the same implementation method as shown above, with a few changes:
