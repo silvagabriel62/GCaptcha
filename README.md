@@ -33,7 +33,7 @@ First of all, you need to [download](https://github.com/silvagabriel62/GCaptcha/
 
 **Reminder:** GCaptcha is a PHP script, what means your forms must be processed using PHP whenever you want to use it.
 
-Next, we'll include a call to our stylesheet into the `<head>` section of the form display page:
+Next, we'll include a call to our stylesheet into the ```html<head>``` section of the form display page:
 
 ```
 <link href="GCAPTCHA_PATH/style.css" rel="stylesheet">
