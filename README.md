@@ -33,22 +33,22 @@ First of all, you need to [download](https://github.com/silvagabriel62/GCaptcha/
 
 **Reminder:** GCaptcha is a PHP script, what means your forms must be processed using PHP whenever you want to use it.
 
-Next, we'll include a call to our stylesheet into the ```html<head>``` section of the form display page:
+Next, we'll include a call to our stylesheet into the `<head>` section of the form display page:
 
-```
+```html
 <link href="GCAPTCHA_PATH/style.css" rel="stylesheet">
 ```
 
 **Be sure to replace each _GCAPTCHA_PATH_ with the full address of the folder you've put GCaptcha files in.**\
 Now, at the point of the `<body>` section which you want to show the image, add the following code:
 
-```
+```html
 <iframe id="captcha" src="GCAPTCHA_PATH/show.php"></iframe>
 ```
 
 Into the `<form>`, add the following code to create a text input box:
 
-```
+```html
 <input type="text" name="captcha_code">
 <a href="javascript:void(0);" onclick="javascript:document.getElementById('captcha').contentWindow.reloadCaptcha();">[Generate another code]</a>
 ```
@@ -60,7 +60,7 @@ Open the PHP file that processes the form data after submission. You can find th
 
 On the first line of the file, add the following code:
 
-```
+```php
 <?php include 'GCAPTCHA_PATH/gcaptcha.php'; ?>
 ```
 
@@ -68,7 +68,7 @@ On the first line of the file, add the following code:
 
 Next, to check if the CAPTCHA typed by the user is correct, use the following snippet:
 
-```
+```php
 <?php
   if(isset($_POST['captcha_code']) && trim($_POST['captcha_code']) != ''){
     if(validateCaptcha($_POST['captcha_code'])){
@@ -112,19 +112,19 @@ To do that, you will use the same implementation method as shown above, with a f
 
 To load our audio-capable interface, you must change the following line:
 
-```
+```html
 <iframe id="captcha" src="GCAPTCHA_PATH/show.php"></iframe>
 ```
 
 When showing the image at the page to:
 
-```
+```html
 <iframe id="captcha" src="GCAPTCHA_PATH/show_audio.php"></iframe>
 ```
 
 And to create a button which will allow the user to start/stop listening the challenge, use the following snippet:
 
-```
+```html
 <a href="javascript:void(0);" onclick="javascript:document.getElementById('captcha').contentWindow.playCaptcha();">[Listen/Stop code]</a>
 ```
 
