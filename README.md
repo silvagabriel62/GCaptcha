@@ -1,5 +1,5 @@
 # GCaptcha
-Open-source free PHP CAPTCHA script. Easy, lightweight and fully customizable.
+[Official Website](http://gabrielsilva.tk/gcaptcha) | [Official GitHub](https://github.com/silvagabriel62/GCaptcha) | Latest version: [0.1alpha](https://github.com/silvagabriel62/GCaptcha/releases/download/0.1alpha/gcaptcha.0.1alpha.zip)
 
 ### What is it?
 **GCaptcha** is an open-source free PHP CAPTCHA script for generating challenge images and CAPTCHA codes to protect forms from spam and abuse. It can be easily added into existing forms on your website to provide protection from spam bots. 
@@ -101,7 +101,7 @@ Both files are self-explained, but you need minimum CSS knowledge in order to cu
 ### Where can I download it?
 You can grab GCaptcha binaries here:
 
-[gcaptcha.0.1alpha.zip](https://github.com/silvagabriel62/GCaptcha/releases/download/0.1alpha/gcaptcha.0.1alpha.zip) (Last updated on 04/13/2018)
+- [gcaptcha.0.1alpha.zip](https://github.com/silvagabriel62/GCaptcha/releases/download/0.1alpha/gcaptcha.0.1alpha.zip) (Last updated on 04/13/2018)
 
 GCaptcha includes 3rd party scripts from Niklas von Hertzen ([html2canvas](https://html2canvas.hertzen.com/)).\
 GCaptcha is licensed as a free open-source software.
@@ -135,7 +135,7 @@ If you had troubles understanding the process above, you can download an explain
 ### Tips & Troubleshooting
 
 **Script requirements**\
-This script will only work if the browser has cookies enabled. It cannot run on servers which PHP session feature is not available somehow. Stable PHP 5.5 or newer is highly recommended. To use audio features, the browser must support HTML5 audio tags and Web Speech API interface. 
+This script will only work if the browser has cookies and Javascript enabled, plus `iframe` support. It cannot run on servers which PHP session feature is not available somehow. Stable PHP 5.5 or newer is highly recommended. To use audio features, the browser must support HTML5 audio tags and Web Speech API interface. Uh, and be careful when customizing the _style.css_ file! Some appearance settings may work as a charm in all browsers, others not.
 
 **Using predefined words from a list**\
 If you want the user to be prompted with a range of predefined words instead of a random code, you can use our word list functionality. To do this, simply change the code generation method (in the _gcaptcha.php_ file) to option 2. The word list is read from the file _words.txt_, which consists of a simple database with one word per line, without trailing spaces. Modify this file to change the word list. You can also try using phrases or multiple words at once, just by setting each challenge in one line of this file. Just be careful when using very large word lists: they demand memory from your server and may decrease your page's loading performance. 
@@ -148,3 +148,9 @@ If you are experiencing this issue, be sure to include the GCaptcha loader (_gca
 
 **The code isn't being passed through the form**\
 You have to make sure that you're using the same processing method when submitting the form (`method` value into `<form>` tag) and in the validation code (`$_GET` or `$_POST` according to the method you chose previously). We always recommend you to use the `$_POST` method in order to prevent security breaks.
+
+### Credits
+Made with love by [Gabriel Silva](http://gabrielsilva.tk), in Brazil.\
+Support: contato@gabrielsilva.tk
+
+P.S.: Sorry about my poor English! :poop:
